@@ -1,17 +1,15 @@
-package com.example.note_room_di.model.local
+package com.example.note_room_di.db
 
-import android.content.Context
 import androidx.room.Database
-import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.note_room_di.model.entity.Note
+import com.example.note_room_di.models.Note
 
 
 @Database(entities = [Note::class], version = 1, exportSchema = false)
 abstract class  UserDataBase:RoomDatabase() {
 
     abstract fun userDao(): UserDAO
-    companion object{
+    /*companion object{
         private var dbInstance:UserDataBase?=null
         fun getDataBaseInstance(context: Context): UserDataBase {
             if (dbInstance==null){
@@ -20,5 +18,5 @@ abstract class  UserDataBase:RoomDatabase() {
         }
             return dbInstance!!
         }
-    }
+    }*/
 }

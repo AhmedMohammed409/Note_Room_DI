@@ -2,7 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
-    id ("androidx.navigation.safeargs.kotlin")
+    id("androidx.navigation.safeargs.kotlin")
     id("com.google.dagger.hilt.android")
 }
 
@@ -21,11 +21,13 @@ android {
     }
     configurations.all {
         resolutionStrategy {
-            force ("androidx.media2:media2:1.0.0-alpha02")
+            force("androidx.media2:media2:1.0.0-alpha02")
         }
     }
 
-buildFeatures{viewBinding=true}
+    buildFeatures {
+        dataBinding = true
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -48,7 +50,7 @@ dependencies {
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.10.0")
+    implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
@@ -60,34 +62,23 @@ dependencies {
 
     //RoomDataBase
     val roomVersion = "2.6.1"
-    implementation ("androidx.room:room-runtime:$roomVersion")
-    annotationProcessor ("androidx.room:room-compiler:$roomVersion")
-    kapt ("androidx.room:room-compiler:$roomVersion")
-    implementation ("androidx.room:room-ktx:$roomVersion")
+    implementation("androidx.room:room-runtime:$roomVersion")
+    annotationProcessor("androidx.room:room-compiler:$roomVersion")
+    kapt("androidx.room:room-compiler:$roomVersion")
+    implementation("androidx.room:room-ktx:$roomVersion")
 
-
-    //lifecycle viewmodel
-    val lifecycleVersion = "2.6.2"
-    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
-    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
-
-    //coroutine
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
-    // to header
-    implementation("com.squareup.okhttp3:logging-interceptor:4.5.0")
-
-    //workmanager
+    // workmanager
     implementation("androidx.work:work-runtime-ktx:2.9.0")
-    //Dagger - Hilt
+
+    // Dagger - Hilt
     implementation("com.google.dagger:hilt-android:2.48")
     kapt("com.google.dagger:hilt-android-compiler:2.48")
-    implementation ("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
-    kapt ("androidx.hilt:hilt-compiler:1.1.0")
-    // Activity KTX for viewModels()
-    implementation( "androidx.activity:activity-ktx:1.8.1")
-   // Architectural Components
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
 
+    // Architectural Components
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }

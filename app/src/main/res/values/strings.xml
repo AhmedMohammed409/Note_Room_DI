@@ -4,7 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="it_s_easy_now_to_remember_important_things">It’s easy now to remember important things</string>
     <string name="start">Start</string>
-    <string name="it_s_easy_now_to_remember_n_important_things">it\'s easy now to remember\n important things</string>
+    <string name="it_s_easy_now_to_remember_n_important_things">it\'s easy now to remember important things</string>
     <string name="cancel">Cancel</string>
     <string name="change">Change</string>
     <string name="name_note">Name Note</string>
@@ -14,5 +14,6 @@
     <string name="note">Note</string>
     <string name="save">Save</string>
     <string name="add">add</string>
-    <string name="take_your_notes_n_easily">Take your notes \n easily</string>
+    <string name="take_your_notes_n_easily">Take your notes\neasily</string>
+    <string name="your_list_is_empty">Your list is empty!</string>
 </resources>

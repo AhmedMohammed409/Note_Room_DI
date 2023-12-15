@@ -1,4 +1,4 @@
-package com.example.note_room_di.ui.fragments
+package com.example.note_room_di.ui.fragments.start
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,18 +9,14 @@ import androidx.navigation.fragment.findNavController
 import com.example.note_room_di.databinding.FragmentStartBinding
 
 class StartFragment : Fragment() {
+
     private lateinit var binding: FragmentStartBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding=FragmentStartBinding.inflate(inflater,container,false)
+        binding = FragmentStartBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -30,6 +26,5 @@ class StartFragment : Fragment() {
         binding.btnStart.setOnClickListener {
             findNavController().navigate(StartFragmentDirections.actionStartFragmentToShowNoteFragment())
         }
-
     }
 }
