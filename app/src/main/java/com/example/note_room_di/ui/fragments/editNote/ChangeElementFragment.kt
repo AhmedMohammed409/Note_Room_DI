@@ -31,6 +31,8 @@ class ChangeElementFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.etNameNote.setText(args.nameNote)
+        binding.etNoteAdd.setText(args.note)
 
         binding.btnCancel.setOnClickListener {
             findNavController().navigateUp()

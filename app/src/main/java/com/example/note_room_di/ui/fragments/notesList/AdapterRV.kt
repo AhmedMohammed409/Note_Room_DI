@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.note_room_di.databinding.ItemBinding
 import com.example.note_room_di.models.Note
 
-class AdapterRV(private val onItemClicked: (note: Note) -> Unit) :
+class AdapterRV (private val onItemClicked: (note: Note) -> Unit) :
     ListAdapter<Note, AdapterRV.ViewHolder>(NotesDiffUtil) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
