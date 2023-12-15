@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/startFragment">
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.note_room_di.ui.fragments.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_showNoteFragment"
+            app:destination="@id/showNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showNoteFragment"
+        android:name="com.example.note_room_di.ui.fragments.ShowNoteFragment"
+        android:label="fragment_show_note"
+        tools:layout="@layout/fragment_show_note" >
+        <action
+            android:id="@+id/action_showNoteFragment_to_addElementFragment"
+            app:destination="@id/addElementFragment" />
+        <action
+            android:id="@+id/action_showNoteFragment_to_changeElementFragment"
+            app:destination="@id/changeElementFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addElementFragment"
+        android:name="com.example.note_room_di.ui.fragments.AddElementFragment"
+        android:label="fragment_add_element"
+        tools:layout="@layout/fragment_add_element" >
+        <action
+            android:id="@+id/action_addElementFragment_to_showNoteFragment"
+            app:destination="@id/showNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeElementFragment"
+        android:name="com.example.note_room_di.ui.fragments.ChangeElementFragment"
+        android:label="fragment_change_element"
+        tools:layout="@layout/fragment_change_element" >
+        <action
+            android:id="@+id/action_changeElementFragment_to_showNoteFragment"
+            app:destination="@id/showNoteFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <argument android:name="nameNote"
+            app:argType="string" />
+        <argument
+            android:name="note"
+            app:argType="string" />
+    </fragment>
+</navigation>
